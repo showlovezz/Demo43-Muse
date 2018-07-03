@@ -4,6 +4,7 @@ class Post < ApplicationRecord
 	validates :description, presence: true
 	validates :rating, presence: true
 	validates :image, presence: true
-	belongs_to :user
 	mount_uploader :image, PhotoUploader
+	belongs_to :user
+	has_many :comments, dependent: :destroy
 end
