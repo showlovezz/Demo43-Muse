@@ -2,4 +2,7 @@
 <%= @post.link %>
 <%= @post.description %>
 <%= @post.rating %>
-by - <%= @post.user.name %>
+<%= image_tag(@post.image_url) %>
+<footer class="blockquote-footer">
+	by <cite><%= @post.user.name %></cite>
+</footer>
