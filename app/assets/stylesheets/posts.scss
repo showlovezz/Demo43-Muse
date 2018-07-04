@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// basic setting
+body{
+	background-color: $color_bg_body;
+}
+
 // navbar
 nav{
 	> .navbar-brand{
@@ -10,7 +15,7 @@ nav{
 			font-weight: bold;
 		}
 		> i:hover{
-			color: $color_hover;
+			color: $color_navbar;
 		}
 	}
 }
@@ -20,10 +25,10 @@ nav{
 		> .navbar-nav{
 			> .nav-item{
 				> .nav-link{
-					color: $color_text;
+					color: $color_light_text;
 				}
 				> .nav-link:hover{
-					color: $color_hover;
+					color: $color_navbar;
 				}
 			}
 		}
@@ -34,6 +39,71 @@ nav{
 .jumbotron{
 	padding-top: 39px;
 	padding-bottom: 39px;
-	background-color: $color_bg_lightdark;
-	color: $color_text;
+	background-color: $color_bg_jumbotron;
+	color: $color_light_text;
 }
+
+// muse index
+#muse_index{
+	> .container{
+		> .row{
+			> .col-6{
+				> .card{
+					padding: 10px 10px 5.5px 10px;
+					border-radius: 0;
+					box-shadow: 4px 4px 12px $color_shadow;
+					position: relative;
+					> .card-img-top{
+						height: 157px;
+						border-radius: 0;
+					}
+					> .content{
+						position: absolute;
+						padding: 10px;
+						opacity: 0;
+						> h6{
+							margin-bottom: 3px;
+							color: $color_dark_text;
+						}
+						> p{
+							margin-bottom: 0;
+							color: $color_icon;
+						}
+					}
+					> .card-body{
+						padding: 0;
+						> .card-text{
+							> p{
+								margin-top: 5.5px;
+								margin-bottom: 0;
+								color: $color_icon;	
+								> i{
+									margin-left: 5px;
+								}
+							}
+							> p:nth-child(2){
+								margin-left: 25px;
+							}
+						}
+					}
+				}
+				> h6{
+					margin-top: 7px;
+					margin-bottom: 20px;
+				}
+				> .card:hover{
+					> .card-img-top{
+						opacity: 0.1;
+					}
+					> .content{
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
