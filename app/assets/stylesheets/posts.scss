@@ -191,6 +191,23 @@ nav{
 	}
 }
 
-
+// muse form
+#muse_form{
+	> .container{
+		> .row{
+			> .col-10{
+				background-color: $color_light_text;
+				margin-top: 50px;
+				padding: 15px;
+				border-radius: 5px;
+				.form-group{
+					.form-control, .custom-file-label{
+						background-color: $color_bg_body;
+					}
+				}
+			}
+		}
+	}
+}
 
 
