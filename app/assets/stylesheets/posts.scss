@@ -210,4 +210,25 @@ nav{
 	}
 }
 
+// sign up
+#sign_up{
+	> .container{
+		> .row{
+			> .col-4{
+				background-color: $color_light_text;
+				margin-top: 50px;
+				padding: 15px;
+				border-radius: 5px;
+				.form-group{
+					.form-control{
+						background-color: $color_bg_body;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
 
