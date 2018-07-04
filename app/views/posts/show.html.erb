@@ -27,7 +27,10 @@
 						  <li class="list-group-item">
 						  	<%= link_to "Visit Link", @post.link, class: "mybtn", target: "_blank" %>
 						  </li>
-						  <li class="list-group-item">Cras justo odio 1</li>
+						  <li class="list-group-item d-flex">
+						  	<div class="star-rating" data-score= <%= @avg_comment %> ></div>
+						  	<p><%= @post.comments.count %><i class="fa fa-comment"></i></p>
+						  </li>
 						  <li class="list-group-item"><%= @post.get_upvotes.size %>
 						  	<%= link_to like_post_path(@post), class: "icon" do%>
 						  		<i class="far fa-thumbs-up"></i>Like

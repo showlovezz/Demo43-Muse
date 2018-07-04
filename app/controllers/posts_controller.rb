@@ -25,6 +25,12 @@ class PostsController < ApplicationController
 	def show
 		@comment = Comment.new
 		@jumbotron = false
+
+		if @post.comments.blank?
+      @avg_comment = 0
+    else
+      @avg_comment = @post.comments.average(:rating).round(2)
+    end
 	end
 
 	def edit
