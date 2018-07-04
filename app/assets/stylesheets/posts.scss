@@ -1,3 +1,31 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// navbar
+nav{
+	> .navbar-brand{
+		> i{
+			font-size: 26px;
+			font-weight: bold;
+		}
+		> i:hover{
+			color: $color_hover;
+		}
+	}
+}
+
+nav{
+	> .collapse{
+		> .navbar-nav{
+			> .nav-item{
+				> .nav-link{
+					color: $color_text;
+				}
+				> .nav-link:hover{
+					color: $color_hover;
+				}
+			}
+		}
+	}
+}
