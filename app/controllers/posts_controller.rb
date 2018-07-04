@@ -5,10 +5,12 @@ class PostsController < ApplicationController
 
 	def index
 		@posts = Post.order("created_at DESC")
+		@jumbotron = true
 	end
 
 	def new
 		@post = current_user.posts.build
+		@jumbotron = false
 	end
 
 	def create
@@ -22,9 +24,11 @@ class PostsController < ApplicationController
 
 	def show
 		@comment = Comment.new
+		@jumbotron = false
 	end
 
 	def edit
+		@jumbotron = false
 	end
 
 	def update

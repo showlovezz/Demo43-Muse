@@ -1,0 +1,13 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container text-center">
+    <% if user_signed_in? %>
+    	<h2>Hello! <%= current_user.name %></h2>
+    	<p>Share your inspiration and see what's inspiring others.</p>
+    	<%= link_to "Add New Inspiration", new_post_path, class: "btn btn-outline-info" %>
+    <% else %>
+    	<h2>What's your Muse?</h2>
+    	<p>Share your inspiration and see what's inspiring others.</p>
+    	<%= link_to "Sign up", new_user_registration_path, class: "btn btn-outline-success" %>
+    <% end %>
+  </div>
+</div>
