@@ -1,5 +1,13 @@
 <% if user_signed_in? %>
 	<%= form_for [@post, @comment] do |f| %>
+		<% if @post.errors.any? %>
+		<h2>We have some errors here !</h2>
+		<ul>
+	 		<% @post.errors.full_messages.each do |msg| %>
+		 		<li><%= msg %></li>
+			<% end %>
+	 	</ul>
+	<% end %>
 		<div class="form-group">
       <div id="star-rating"></div>
     </div>
