@@ -1,19 +1,56 @@
-<%= @post.title %>
-<%= @post.link %>
-<%= @post.description %>
-<%= @post.rating %>
-<%= image_tag(@post.image_url) %>
-<footer class="blockquote-footer">
-	by <cite><%= @post.user.name %></cite>
-</footer>
+<section id="muse_show">
+	<div class="container">
+		<div class="row">
+			<div class="col-10 offset-1 col-sm-10 offset-sm-1">
+				
+				<div class="row">
+					<div class="col-12 col-sm-12">
+						<h3><%= @post.title %></h3>
+						<div class="text-muted">by
+							<%= @post.user.name %>
+							<%= time_ago_in_words(@post.created_at) %> ago
+						</div>
+					</div>
+				
+					<div class="col-12 col-sm-8">
+						<%= image_tag @post.image_url, class: "img-fluid rounded mx-auto d-block" %>
+						<p><%= simple_format @post.description %></p>
+						<hr>
+						<h5><%= @post.comments.count %>Responses</h5>
 
-<%= @post.get_upvotes.size %>Likes
-<%= @post.get_downvotes.size %> Dislikes
+						<%= render "comments/show_comment" %>
+						<%= render "comments/input_comment" %>
+					</div>
 
-<%= link_to "Like", like_post_path(@post), method: :get %>
-<%= link_to "Dislike", dislike_post_path(@post), method: :get %>
+					<div class="col-12 col-sm-4">
+						<ul class="list-group list-group-flush">
+						  <li class="list-group-item">
+						  	<%= link_to "Visit Link", @post.link, class: "mybtn", target: "_blank" %>
+						  </li>
+						  <li class="list-group-item">Cras justo odio 1</li>
+						  <li class="list-group-item"><%= @post.get_upvotes.size %>
+						  	<%= link_to like_post_path(@post), class: "icon" do%>
+						  		<i class="far fa-thumbs-up"></i>Like
+						  	<% end %>
+						  </li>
+						  <li class="list-group-item"><%= @post.get_downvotes.size %>
+						  	<%= link_to dislike_post_path(@post), class: "icon" do %>
+						  		<i class="far fa-thumbs-down"></i>Dislike
+						  	<% end %>
+						  </li>
+						  <li class="list-group-item">
+						  	<% if user_signed_in? %>
+							  	<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+									  <%= link_to "Edit", edit_post_path(@post), class: "btn btn-outline-dark" %>
+										<%= link_to "Delete", post_path(@post), method: :delete, class: "btn btn-outline-dark", data: {confirm: "Are you sure?"} %>
+									</div>
+								<% end %>
+						  </li>
+						</ul>
+					</div>
+				</div>
 
-<h4><%= @post.comments.count %>Comments</h4>
-
-<%= render "comments/show_comment" %>
-<%= render "comments/input_comment" %>
+			</div>
+		</div>
+	</div>
+</section>
