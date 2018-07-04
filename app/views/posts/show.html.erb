@@ -7,5 +7,13 @@
 	by <cite><%= @post.user.name %></cite>
 </footer>
 
+<%= @post.get_upvotes.size %>Likes
+<%= @post.get_downvotes.size %> Dislikes
+
+<%= link_to "Like", like_post_path(@post), method: :get %>
+<%= link_to "Dislike", dislike_post_path(@post), method: :get %>
+
+<h4><%= @post.comments.count %>Comments</h4>
+
 <%= render "comments/show_comment" %>
 <%= render "comments/input_comment" %>

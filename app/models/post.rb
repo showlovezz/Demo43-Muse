@@ -5,6 +5,7 @@ class Post < ApplicationRecord
 	validates :rating, presence: true
 	validates :image, presence: true
 	mount_uploader :image, PhotoUploader
+	acts_as_votable
 	belongs_to :user
 	has_many :comments, dependent: :destroy
 end
