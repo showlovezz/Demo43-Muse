@@ -229,6 +229,25 @@ nav{
 	}
 }
 
-
+// edit account
+#edit{
+	> .container{
+		> .row{
+			> .col-sm-8{
+				background-color: $color_light_text;
+				margin-top: 10px;
+				padding: 15px;
+				border-radius: 5px;
+				.form-group{
+					.field{
+						.form-control{
+							background-color: $color_bg_body;
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
 
