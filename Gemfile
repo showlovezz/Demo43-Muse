@@ -40,6 +40,8 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'devise', '~> 4.4', '>= 4.4.3'
 gem 'carrierwave', '~> 1.2', '>= 1.2.3'
 gem 'acts_as_votable', '~> 0.11.1'
+gem 'fog-aws', '~> 3.0'
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 group :production do
   gem 'pg', '~> 0.20'
