@@ -7,7 +7,7 @@
 					<%= link_to post_path(post), class: "card", style: "text-decoration: none;" do %>
 						<%= image_tag post.image_url, class: "card-img-top" %>
 						<div class="content">
-							<h6><%= truncate(post.title, length: 22) %></h6>
+							<h6><%= truncate(post.title, length: 19) %></h6>
 							<p><%= truncate(post.description, length: 110) %></p>
 						</div>
 					  <div class="card-body">
