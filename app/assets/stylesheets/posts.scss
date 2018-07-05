@@ -178,9 +178,11 @@ nav{
 								}
 								> p{
 									margin-bottom: 0;
+									color: $color_icon;
 									> i {
 										color: $color_icon;
-										margin-left: 10px;
+										margin-left: 15px;
+										margin-right: 1px;
 									}
 								}
 							}

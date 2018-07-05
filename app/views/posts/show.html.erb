@@ -29,7 +29,7 @@
 						  </li>
 						  <li class="list-group-item d-flex">
 						  	<div class="star-rating" data-score= <%= @avg_comment %> ></div>
-						  	<p><%= @post.comments.count %><i class="fa fa-comment"></i></p>
+						  	<p><%= @post.comments.count %><i class="fa fa-comment"></i>Responses</p>
 						  </li>
 						  <li class="list-group-item"><%= @post.get_upvotes.size %>
 						  	<%= link_to like_post_path(@post), class: "icon" do%>
@@ -42,7 +42,7 @@
 						  	<% end %>
 						  </li>
 						  <li class="list-group-item">
-						  	<% if user_signed_in? %>
+						  	<% if @post.user == current_user %>
 							  	<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
 									  <%= link_to "Edit", edit_post_path(@post), class: "btn btn-outline-dark" %>
 										<%= link_to "Delete", post_path(@post), method: :delete, class: "btn btn-outline-dark", data: {confirm: "Are you sure?"} %>
